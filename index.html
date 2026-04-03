@@ -1,1802 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growth Systems | Scale Without Burnout</title>
+    <title>Growth & Savvy | Systems That Scale</title>
+    <meta name="description" content="We build growth systems that help creators, brands, and online businesses turn attention into consistent revenue.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <style>
-        /* ============================================
-           CSS VARIABLES & RESET
-           ============================================ */
-        :root {
-            --bg-primary: #0A0A0A;
-            --bg-secondary: #0D0D0D;
-            --bg-tertiary: #111111;
-            --bg-quaternary: #0F0F0F;
-            --text-primary: #F5F5F5;
-            --text-secondary: #888888;
-            --text-tertiary: #A1A1A1;
-            --accent: #D4AF37;
-            --accent-soft: rgba(212, 175, 55, 0.15);
-            --accent-glow: rgba(212, 175, 55, 0.4);
-            --border: #1A1A1A;
-            --border-light: #222222;
-            --card-bg: #111111;
-            
-            --font-heading: 'Satoshi', 'Inter', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            
-            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            
-            --max-width: 1200px;
-            --section-spacing: 140px;
-            --card-radius: 20px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ============================================
-           UTILITY CLASSES
-           ============================================ */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .container-narrow {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .section {
-            padding: var(--section-spacing) 0;
-            position: relative;
-        }
-
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), 
-                        transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.4s; }
-        .stagger-5 { transition-delay: 0.5s; }
-
-        /* ============================================
-           TYPOGRAPHY
-           ============================================ */
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            line-height: 1.1;
-            color: var(--text-primary);
-            letter-spacing: -0.03em;
-        }
-
-        h1 {
-            font-size: clamp(52px, 7vw, 84px);
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1.05;
-        }
-
-        h2 {
-            font-size: clamp(36px, 4.5vw, 52px);
-            font-weight: 600;
-            letter-spacing: -0.03em;
-        }
-
-        h3 {
-            font-size: clamp(26px, 3vw, 32px);
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 17px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            max-width: 65ch;
-        }
-
-        .text-accent {
-            color: var(--accent);
-        }
-
-        .text-large {
-            font-size: 20px;
-            line-height: 1.7;
-        }
-
-        /* ============================================
-           BUTTONS
-           ============================================ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px 36px;
-            font-family: var(--font-heading);
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            border: none;
-            letter-spacing: 0.01em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
-            opacity: 0;
-            transition: var(--transition-fast);
-        }
-
-        .btn:hover::before {
-            opacity: 1;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #E4BF47;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 50px rgba(212, 175, 55, 0.4), 
-                        0 0 0 1px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1.5px solid var(--border-light);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            background: rgba(212, 175, 55, 0.05);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.1);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* ============================================
-           HEADER & NAVIGATION
-           ============================================ */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 24px 0;
-            transition: var(--transition-smooth);
-            background: transparent;
-        }
-
-        .header.scrolled {
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.04em;
-            position: relative;
-        }
-
-        .logo span {
-            color: var(--accent);
-            position: relative;
-        }
-
-        .logo span::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s ease;
-        }
-
-        .logo:hover span::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .nav {
-            display: flex;
-            gap: 48px;
-        }
-
-        .nav a {
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-fast);
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .nav a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background: var(--accent);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav a:hover::after {
-            width: 100%;
-        }
-
-        .nav a.active {
-            color: var(--text-primary);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 8px;
-            background: none;
-            border: none;
-            z-index: 1001;
-        }
-
-        .mobile-menu-btn span {
-            width: 26px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: var(--transition-fast);
-            border-radius: 2px;
-        }
-
-        /* ============================================
-           HERO SECTION - PREMIUM UPGRADE
-           ============================================ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 120px;
-            padding-bottom: 80px;
-        }
-
-        /* Layered animated background */
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-
-        .hero-glow-1 {
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            top: -20%;
-            right: -10%;
-            filter: blur(60px);
-            animation: float-glow-1 20s ease-in-out infinite;
-        }
-
-        .hero-glow-2 {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
-            bottom: -10%;
-            left: -5%;
-            filter: blur(80px);
-            animation: float-glow-2 25s ease-in-out infinite;
-        }
-
-        .hero-glow-3 {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
-            top: 40%;
-            left: 30%;
-            filter: blur(40px);
-            animation: pulse-glow 8s ease-in-out infinite;
-        }
-
-        /* Animated grid pattern */
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 80px 80px;
-            opacity: 0.5;
-            animation: grid-move 30s linear infinite;
-        }
-
-        .hero-grid::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center, transparent 0%, var(--bg-primary) 80%);
-        }
-
-        /* Gradient overlays for depth */
-        .hero-overlay-top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(180deg, var(--bg-primary) 0%, transparent 100%);
-            z-index: 1;
-        }
-
-        .hero-overlay-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 300px;
-            background: linear-gradient(0deg, var(--bg-primary) 0%, transparent 100%);
-            z-index: 1;
-        }
-
-        @keyframes float-glow-1 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-30px, 30px) scale(1.1); }
-        }
-
-        @keyframes float-glow-2 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(40px, -20px) scale(0.95); }
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-
-        @keyframes grid-move {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(80px); }
-        }
-
-        /* Hero content - asymmetric layout */
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 950px;
-            margin-left: 0;
-            padding-right: 40px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 32px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-badge::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: pulse-dot 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .hero h1 {
-            margin-bottom: 28px;
-            background: linear-gradient(180deg, #fff 0%, #c0c0c0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 80px rgba(212, 175, 55, 0.1);
-        }
-
-        .hero h1 .line-break {
-            display: block;
-        }
-
-        .hero h1 .accent-text {
-            color: var(--accent);
-            -webkit-text-fill-color: var(--accent);
-            position: relative;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(18px, 2vw, 22px);
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            max-width: 620px;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-
-        /* ============================================
-           SECTION SEPARATORS
-           ============================================ */
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(212, 175, 55, 0.2) 20%, 
-                rgba(212, 175, 55, 0.2) 80%, 
-                transparent 100%);
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        .section-divider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            padding: 60px 0;
-        }
-
-        .section-divider-dots span {
-            width: 4px;
-            height: 4px;
-            background: var(--border-light);
-            border-radius: 50%;
-        }
-
-        .section-divider-dots span:nth-child(2) {
-            background: var(--accent);
-        }
-
-        /* ============================================
-           WHO WE HELP - LEFT ALIGNED LAYOUT
-           ============================================ */
-        .who-we-help {
-            background: var(--bg-secondary);
-            position: relative;
-        }
-
-        .who-we-help::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-        }
-
-        .who-we-help .section-header {
-            text-align: left;
-            max-width: 600px;
-            margin: 0 0 80px 0;
-        }
-
-        .who-we-help .section-header h2 {
-            margin-bottom: 20px;
-        }
-
-        .who-we-help .section-header p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        /* Premium Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .card {
-            background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(15, 15, 15, 0.9));
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: 40px 32px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Gradient border effect */
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: var(--card-radius);
-            padding: 1px;
-            background: linear-gradient(135deg, 
-                rgba(212, 175, 55, 0.3) 0%, 
-                transparent 40%, 
-                transparent 60%, 
-                rgba(212, 175, 55, 0.1) 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-
-        /* Top accent line */
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20%;
-            right: 20%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-
-        /* Inner glow */
-        .card-inner-glow {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08), transparent 60%);
-            opacity: 0;
-            transition: var(--transition-smooth);
-            pointer-events: none;
-        }
-
-        .card:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 
-                0 25px 60px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(212, 175, 55, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        }
-
-        .card:hover::before,
-        .card:hover::after,
-        .card:hover .card-inner-glow {
-            opacity: 1;
-        }
-
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 28px;
-            font-size: 26px;
-            transition: var(--transition-bounce);
-            position: relative;
-            z-index: 1;
-        }
-
-        .card:hover .card-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.1));
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
-        }
-
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 14px;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card p {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ============================================
-           PROBLEM SECTION - CENTERED NARROW
-           ============================================ */
-        .problem {
-            background: var(--bg-tertiary);
-            text-align: center;
-        }
-
-        .problem-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .problem h2 {
-            margin-bottom: 28px;
-            font-size: clamp(36px, 4vw, 48px);
-        }
-
-        .problem p {
-            font-size: 21px;
-            color: var(--text-tertiary);
-            line-height: 1.8;
-        }
-
-        /* ============================================
-           SYSTEM SECTION - SPLIT LAYOUT
-           ============================================ */
-        .system {
-            background: var(--bg-primary);
-            position: relative;
-        }
-
-        .system::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-        }
-
-        .system-layout {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .system-header {
-            position: sticky;
-            top: 140px;
-        }
-
-        .system-header h2 {
-            margin-bottom: 24px;
-            font-size: clamp(36px, 4vw, 48px);
-        }
-
-        .system-header p {
-            font-size: 18px;
-            color: var(--text-secondary);
-        }
-
-        .system-blocks {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .system-block {
-            background: linear-gradient(145deg, rgba(20, 20, 20, 0.6), rgba(15, 15, 15, 0.8));
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: 48px 40px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .system-block::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--accent), transparent);
-            opacity: 0;
-            transition: var(--transition-fast);
-        }
-
-        .system-block:hover {
-            transform: translateX(8px);
-            border-color: rgba(212, 175, 55, 0.2);
-            background: linear-gradient(145deg, rgba(25, 25, 25, 0.8), rgba(18, 18, 18, 0.9));
-        }
-
-        .system-block:hover::before {
-            opacity: 1;
-        }
-
-        .system-number {
-            font-family: var(--font-heading);
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 16px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .system-number::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--border), transparent);
-            max-width: 100px;
-        }
-
-        .system-block h3 {
-            font-size: 28px;
-            margin-bottom: 16px;
-        }
-
-        .system-block p {
-            font-size: 16px;
-            line-height: 1.8;
-            max-width: 100%;
-        }
-
-        /* ============================================
-           RESULTS SECTION - ALTERNATING CARDS
-           ============================================ */
-        .results {
-            background: var(--bg-quaternary);
-        }
-
-        .results .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .result-item {
-            background: linear-gradient(180deg, rgba(25, 25, 25, 0.5), rgba(15, 15, 15, 0.8));
-            border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: 48px 28px;
-            text-align: center;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .result-item:nth-child(even) {
-            transform: translateY(20px);
-        }
-
-        .result-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.1), transparent 70%);
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-
-        .result-item:hover {
-            transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.25);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .result-item:nth-child(even):hover {
-            transform: translateY(12px);
-        }
-
-        .result-item:hover::before {
-            opacity: 1;
-        }
-
-        .result-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 28px;
-            transition: var(--transition-bounce);
-            position: relative;
-            z-index: 1;
-        }
-
-        .result-item:hover .result-icon {
-            transform: scale(1.15) rotate(-10deg);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.1));
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .result-item h4 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ============================================
-           PROCESS SECTION - HORIZONTAL TIMELINE
-           ============================================ */
-        .process {
-            background: var(--bg-secondary);
-            position: relative;
-        }
-
-        .process::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-        }
-
-        .process .section-header {
-            text-align: left;
-            max-width: 500px;
-            margin: 0 0 80px 0;
-        }
-
-        .process-timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .process-timeline::before {
-            content: '';
-            position: absolute;
-            top: 62px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, 
-                var(--border) 0%, 
-                var(--accent) 20%, 
-                var(--accent) 80%, 
-                var(--border) 100%);
-            opacity: 0.3;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            position: relative;
-        }
-
-        .process-step {
-            position: relative;
-            text-align: left;
-        }
-
-        .step-number {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(145deg, var(--card-bg), var(--bg-primary));
-            border: 2px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 28px;
-            font-family: var(--font-heading);
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--text-secondary);
-            transition: var(--transition-smooth);
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-number::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 1px solid transparent;
-            background: linear-gradient(135deg, var(--accent), transparent) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-
-        .process-step:hover .step-number {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: scale(1.1);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .process-step:hover .step-number::after {
-            opacity: 1;
-        }
-
-        .process-step h4 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .process-step p {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        /* ============================================
-           TEAM SECTION - CENTERED DRAMATIC
-           ============================================ */
-        .team {
-            background: var(--bg-primary);
-            text-align: center;
-            position: relative;
-        }
-
-        .team::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 1px;
-            background: radial-gradient(circle, var(--accent), transparent 70%);
-            opacity: 0.5;
-        }
-
-        .team-content {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .team-content h2 {
-            margin-bottom: 28px;
-            font-size: clamp(40px, 5vw, 56px);
-        }
-
-        .team-content p {
-            font-size: 22px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        /* ============================================
-           FINAL CTA - FULL BLEED GRADIENT
-           ============================================ */
-        .final-cta {
-            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding: 160px 0;
-        }
-
-        .final-cta-bg {
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse 60% 40% at 50% 50%, rgba(212, 175, 55, 0.08), transparent),
-                radial-gradient(ellipse 40% 30% at 30% 70%, rgba(212, 175, 55, 0.05), transparent),
-                radial-gradient(ellipse 40% 30% at 70% 30%, rgba(212, 175, 55, 0.05), transparent);
-            animation: cta-pulse 10s ease-in-out infinite;
-        }
-
-        @keyframes cta-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-
-        .final-cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .final-cta h2 {
-            margin-bottom: 48px;
-            font-size: clamp(44px, 6vw, 68px);
-            background: linear-gradient(180deg, #fff 0%, #d0d0d0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .final-cta .btn-primary {
-            padding: 22px 48px;
-            font-size: 17px;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        .footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border);
-            padding: 100px 0 40px;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0.3;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 80px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 24px;
-            display: inline-block;
-            font-size: 28px;
-        }
-
-        .footer-brand p {
-            font-size: 15px;
-            max-width: 320px;
-            line-height: 1.8;
-            color: var(--text-tertiary);
-        }
-
-        .footer-column h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 28px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 14px;
-        }
-
-        .footer-column a {
-            font-size: 15px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-fast);
-            display: inline-block;
-        }
-
-        .footer-column a:hover {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 40px;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-bottom p {
-            font-size: 14px;
-            color: var(--text-tertiary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-links a {
-            width: 44px;
-            height: 44px;
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: var(--transition-fast);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-links a::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--accent-soft), transparent);
-            opacity: 0;
-            transition: var(--transition-fast);
-        }
-
-        .social-links a:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .social-links a:hover::before {
-            opacity: 1;
-        }
-
-        /* ============================================
-           RESPONSIVE DESIGN
-           ============================================ */
-        @media (max-width: 1024px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .system-layout {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .system-header {
-                position: relative;
-                top: 0;
-            }
-            
-            .results-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .result-item:nth-child(even) {
-                transform: none;
-            }
-            
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 60px 40px;
-            }
-            
-            .process-timeline::before {
-                display: none;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 60px 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --section-spacing: 100px;
-            }
-            
-            .container, .container-narrow {
-                padding: 0 24px;
-            }
-            
-            .nav {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .hero-content {
-                padding-right: 0;
-            }
-            
-            .cards-grid,
-            .results-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
-            }
-            
-            .btn-group {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .hero-glow-1,
-            .hero-glow-2 {
-                width: 400px;
-                height: 400px;
-            }
-        }
-
-        /* ============================================
-           MOBILE MENU
-           ============================================ */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(30px);
-            z-index: 999;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .mobile-nav.active {
-            display: flex;
-        }
-
-        .mobile-nav a {
-            font-family: var(--font-heading);
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: var(--transition-fast);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: mobile-link-in 0.4s ease forwards;
-        }
-
-        .mobile-nav.active a {
-            animation: mobile-link-in 0.4s ease forwards;
-        }
-
-        .mobile-nav.active a:nth-child(2) { animation-delay: 0.1s; }
-        .mobile-nav.active a:nth-child(3) { animation-delay: 0.2s; }
-        .mobile-nav.active a:nth-child(4) { animation-delay: 0.3s; }
-        .mobile-nav.active a:nth-child(5) { animation-delay: 0.4s; }
-        .mobile-nav.active a:nth-child(6) { animation-delay: 0.5s; }
-        .mobile-nav.active a:nth-child(7) { animation-delay: 0.6s; }
-
-        @keyframes mobile-link-in {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .mobile-nav a:hover {
-            color: var(--accent);
-        }
-
-        .mobile-nav .close-btn {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 40px;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: var(--transition-fast);
-        }
-
-        .mobile-nav .close-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--accent);
-        }
-
-        /* ============================================
-           SUBPAGE STYLES
-           ============================================ */
-        .page-header {
-            padding-top: 160px;
-            padding-bottom: 80px;
-            text-align: center;
-            background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
-            position: relative;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-        }
-
-        .page-header h1 {
-            font-size: clamp(48px, 6vw, 72px);
-            margin-bottom: 20px;
-        }
-
-        .page-header p {
-            font-size: 19px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    </style>
-<base target="_blank">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">Growth<span>.</span></a>
-            <nav class="nav">
-                <a href="index.html" class="active">Home</a>
-                <a href="who-we-help.html">Who We Help</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="case-studies.html">Case Studies</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+<body class="bg-primary text-primary antialiased overflow-x-hidden">
 
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-        <button class="close-btn" onclick="toggleMobileMenu()">×</button>
-        <a href="index.html">Home</a>
-        <a href="who-we-help.html">Who We Help</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-primary to-gold-subtle flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                        <span class="text-bg-primary font-bold text-lg">G</span>
+                    </div>
+                    <span class="font-heading font-bold text-xl tracking-tight">Growth & Savvy</span>
+                </a>
 
-    <!-- Hero Section - Premium Upgrade -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-grid"></div>
-            <div class="hero-glow-1"></div>
-            <div class="hero-glow-2"></div>
-            <div class="hero-glow-3"></div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="about.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="who-we-help.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">Who We Help</a>
+                    <a href="solutions.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">Solutions</a>
+                    <a href="case-studies.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">Case Studies</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://wa.me/YOURNUMBER" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+                    <a href="contact.html" class="btn-primary">Get a System</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
         </div>
-        <div class="hero-overlay-top"></div>
-        <div class="hero-overlay-bottom"></div>
-        
-        <div class="container">
-            <div class="hero-content fade-up">
-                <div class="hero-badge">Now accepting new clients</div>
-                <h1>
-                    We help creators, brands, and experts 
-                    <span class="line-break">scale without <span class="accent-text">burnout.</span></span>
-                </h1>
-                <p class="hero-subtitle">We build the systems behind your growth — content, monetization, and automation — so you can focus on what you do best.</p>
-                <div class="btn-group">
-                    <a href="contact.html" class="btn btn-primary">Book a Strategy Call</a>
-                    <a href="#process" class="btn btn-secondary">See How We Work</a>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bg-elevated border-t border-border-subtle">
+            <div class="px-6 py-4 space-y-3">
+                <a href="about.html" class="block py-2 text-secondary hover:text-primary">About</a>
+                <a href="who-we-help.html" class="block py-2 text-secondary hover:text-primary">Who We Help</a>
+                <a href="solutions.html" class="block py-2 text-secondary hover:text-primary">Solutions</a>
+                <a href="case-studies.html" class="block py-2 text-secondary hover:text-primary">Case Studies</a>
+                <a href="contact.html" class="block py-2 text-gold-primary font-medium">Get a System</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-bg-primary">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--gold-glow)_0%,_transparent_70%)] opacity-20"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold-primary/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+        </div>
+
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <!-- Eyebrow -->
+            <div class="hero-eyebrow inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-primary/30 bg-gold-primary/5 mb-8">
+                <span class="w-2 h-2 rounded-full bg-gold-primary animate-pulse"></span>
+                <span class="text-xs font-medium text-gold-primary uppercase tracking-widest">Growth Systems Agency</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="hero-headline font-heading font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight mb-8">
+                <span class="block text-primary reveal-text">Turn Attention</span>
+                <span class="block text-gold-primary reveal-text">Into Revenue</span>
+                <span class="block text-primary reveal-text">Systems</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="hero-subheadline max-w-2xl mx-auto text-lg md:text-xl text-secondary mb-12 leading-relaxed">
+                We build growth infrastructure for creators, brands, and online businesses. 
+                Not random tactics. <span class="text-primary font-medium">Repeatable systems</span> that scale.
+            </p>
+
+            <!-- CTAs -->
+            <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="contact.html" class="btn-primary text-base px-8 py-4">
+                    Build Your System
+                    <svg class="w-5 h-5 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="who-we-help.html" class="btn-secondary text-base px-8 py-4">
+                    See Who We Help
+                </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="hero-social flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-muted">
+                <div class="flex items-center gap-2">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-bg-card border-2 border-bg-primary flex items-center justify-center text-xs font-bold">G</div>
+                        <div class="w-8 h-8 rounded-full bg-bg-card border-2 border-bg-primary flex items-center justify-center text-xs font-bold">S</div>
+                        <div class="w-8 h-8 rounded-full bg-bg-card border-2 border-bg-primary flex items-center justify-center text-xs font-bold">+</div>
+                    </div>
+                    <span>Trusted by 50+ brands</span>
+                </div>
+                <div class="hidden md:block w-px h-4 bg-border-subtle"></div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-gold-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span class="text-primary font-medium">4.9/5</span>
+                    <span>from 30+ reviews</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="section-divider-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- Who We Work With - Left Aligned -->
-    <section class="section who-we-help">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2>Who We Work With</h2>
-                <p>If you have attention — or you're trying to build it — we help you turn it into something scalable and predictable.</p>
-            </div>
-            <div class="cards-grid">
-                <div class="card fade-up stagger-1">
-                    <div class="card-inner-glow"></div>
-                    <div class="card-icon">✦</div>
-                    <h3>Creators & Influencers</h3>
-                    <p>Grow your audience and turn content into income.</p>
+    <!-- Problem/Solution Bridge -->
+    <section class="py-24 lg:py-32 bg-bg-secondary relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+                        Tired of <span class="text-muted line-through">Random Tactics</span>?
+                    </h2>
+                    <p class="text-lg text-secondary mb-8 leading-relaxed">
+                        Most businesses chase trends, post inconsistently, and hope something works. 
+                        We build <span class="text-gold-primary font-medium">integrated systems</span> where every piece works together 
+                        to attract, convert, and retain customers on autopilot.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-gold-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-primary">Content that converts, not just engages</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-gold-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-primary">Funnels that work while you sleep</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-gold-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-primary">Operations that scale without chaos</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card fade-up stagger-2">
-                    <div class="card-inner-glow"></div>
-                    <div class="card-icon">◆</div>
-                    <h3>Authors & Experts</h3>
-                    <p>Build authority and turn your work into long-term revenue.</p>
-                </div>
-                <div class="card fade-up stagger-3">
-                    <div class="card-inner-glow"></div>
-                    <div class="card-icon">▲</div>
-                    <h3>E-commerce Brands</h3>
-                    <p>Increase conversions and scale your sales systems.</p>
-                </div>
-                <div class="card fade-up stagger-4">
-                    <div class="card-inner-glow"></div>
-                    <div class="card-icon">●</div>
-                    <h3>Course Creators</h3>
-                    <p>Structure and sell your knowledge effectively.</p>
-                </div>
-                <div class="card fade-up stagger-5">
-                    <div class="card-inner-glow"></div>
-                    <div class="card-icon">◈</div>
-                    <h3>Organizations & Communities</h3>
-                    <p>Expand reach and simplify operations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Problem Section - Centered Narrow -->
-    <section class="section problem">
-        <div class="container-narrow">
-            <div class="problem-content fade-up">
-                <h2>Growth shouldn't feel this chaotic.</h2>
-                <p>Most creators and brands struggle with inconsistent growth, low conversions, and doing everything manually without a clear system.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="section-divider-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- System Section - Split Layout -->
-    <section class="section system">
-        <div class="container">
-            <div class="system-layout">
-                <div class="system-header fade-up">
-                    <h2>We bring structure to your growth.</h2>
-                    <p>Three integrated systems working together to create sustainable, scalable success.</p>
-                </div>
-                <div class="system-blocks">
-                    <div class="system-block fade-up stagger-1">
-                        <div class="system-number">System 01</div>
-                        <h3>Content & Growth Engine</h3>
-                        <p>Strategic content systems that attract and retain your ideal audience consistently. We build the machine that keeps your pipeline full.</p>
-                    </div>
-                    <div class="system-block fade-up stagger-2">
-                        <div class="system-number">System 02</div>
-                        <h3>Monetization Systems</h3>
-                        <p>Revenue frameworks that convert attention into sustainable income streams. Turn views into value, followers into customers.</p>
-                    </div>
-                    <div class="system-block fade-up stagger-3">
-                        <div class="system-number">System 03</div>
-                        <h3>Automation & Backend</h3>
-                        <p>Operational infrastructure that runs your business while you focus on creation. Systems that scale without adding chaos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section - Alternating Grid -->
-    <section class="section results">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2>What this means for you</h2>
-            </div>
-            <div class="results-grid">
-                <div class="result-item fade-up stagger-1">
-                    <div class="result-icon">↗</div>
-                    <h4>Consistent growth</h4>
-                </div>
-                <div class="result-item fade-up stagger-2">
-                    <div class="result-icon">◉</div>
-                    <h4>Better conversions</h4>
-                </div>
-                <div class="result-item fade-up stagger-3">
-                    <div class="result-icon">⚡</div>
-                    <h4>Less manual work</h4>
-                </div>
-                <div class="result-item fade-up stagger-4">
-                    <div class="result-icon">∞</div>
-                    <h4>Scalable systems</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Process Section - Horizontal Timeline -->
-    <section class="section process" id="process">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2>Simple. Structured. Effective.</h2>
-            </div>
-            <div class="process-timeline">
-                <div class="process-grid">
-                    <div class="process-step fade-up stagger-1">
-                        <div class="step-number">1</div>
-                        <h4>Audit & Strategy</h4>
-                        <p>Deep analysis of your current position and growth opportunities</p>
-                    </div>
-                    <div class="process-step fade-up stagger-2">
-                        <div class="step-number">2</div>
-                        <h4>System Setup</h4>
-                        <p>Building the infrastructure and workflows tailored to your goals</p>
-                    </div>
-                    <div class="process-step fade-up stagger-3">
-                        <div class="step-number">3</div>
-                        <h4>Execution</h4>
-                        <p>Implementing strategies with precision and consistent action</p>
-                    </div>
-                    <div class="process-step fade-up stagger-4">
-                        <div class="step-number">4</div>
-                        <h4>Optimization</h4>
-                        <p>Continuous refinement based on data and performance metrics</p>
+                <div class="reveal-right relative">
+                    <div class="aspect-square rounded-2xl bg-bg-elevated border border-border-subtle p-8 relative overflow-hidden group hover:border-gold-primary/30 transition-colors duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <!-- Abstract System Visualization -->
+                        <div class="relative z-10 h-full flex flex-col justify-center items-center">
+                            <div class="grid grid-cols-3 gap-4 w-full max-w-sm">
+                                <div class="aspect-square rounded-lg bg-bg-card border border-border-subtle flex items-center justify-center text-gold-primary text-2xl font-bold animate-pulse-slow">1</div>
+                                <div class="aspect-square rounded-lg bg-bg-card border border-border-subtle flex items-center justify-center text-gold-primary text-2xl font-bold" style="animation-delay: 0.2s;">2</div>
+                                <div class="aspect-square rounded-lg bg-bg-card border border-border-subtle flex items-center justify-center text-gold-primary text-2xl font-bold animate-pulse-slow" style="animation-delay: 0.4s;">3</div>
+                                <div class="aspect-square rounded-lg bg-bg-card border border-border-subtle flex items-center justify-center text-gold-primary text-2xl font-bold" style="animation-delay: 0.6s;">4</div>
+                                <div class="aspect-square rounded-lg bg-gold-primary text-bg-primary flex items-center justify-center text-2xl font-bold shadow-gold">→</div>
+                                <div class="aspect-square rounded-lg bg-bg-card border border-border-subtle flex items-center justify-center text-gold-primary text-2xl font-bold animate-pulse-slow" style="animation-delay: 0.8s;">5</div>
+                            </div>
+                            <p class="mt-6 text-sm text-muted text-center">Integrated Growth System</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="section-divider-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <!-- Who We Help Preview -->
+    <section class="py-24 lg:py-32 bg-bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-gold-primary text-sm font-medium uppercase tracking-widest mb-4 block">Who We Help</span>
+                <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">Built for Specific <span class="text-gold-primary">Challenges</span></h2>
+                <p class="text-secondary max-w-2xl mx-auto text-lg">We don't serve everyone. We solve specific problems for specific businesses.</p>
+            </div>
 
-    <!-- Team Section - Centered Dramatic -->
-    <section class="section team">
-        <div class="container">
-            <div class="team-content fade-up">
-                <h2>You're not hiring a freelancer.</h2>
-                <p>We operate as a focused team handling strategy, execution, and backend systems so nothing slows you down.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Creator Card -->
+                <a href="who-we-help.html#creators" class="group relative p-8 rounded-2xl bg-bg-elevated border border-border-subtle hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1 reveal-up">
+                    <div class="w-12 h-12 rounded-xl bg-gold-primary/10 flex items-center justify-center mb-6 group-hover:bg-gold-primary/20 transition-colors">
+                        <svg class="w-6 h-6 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-primary group-hover:text-gold-primary transition-colors">Creators & Influencers</h3>
+                    <p class="text-secondary text-sm leading-relaxed mb-4">Turn consistent content into predictable income with structured funnels and monetization paths.</p>
+                    <span class="inline-flex items-center text-gold-primary text-sm font-medium">
+                        See Solution
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <!-- Author Card -->
+                <a href="who-we-help.html#authors" class="group relative p-8 rounded-2xl bg-bg-elevated border border-border-subtle hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1 reveal-up" style="animation-delay: 0.1s;">
+                    <div class="w-12 h-12 rounded-xl bg-gold-primary/10 flex items-center justify-center mb-6 group-hover:bg-gold-primary/20 transition-colors">
+                        <svg class="w-6 h-6 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-primary group-hover:text-gold-primary transition-colors">Authors & Thought Leaders</h3>
+                    <p class="text-secondary text-sm leading-relaxed mb-4">Transform ideas into authority. Build visibility and monetize expertise across platforms.</p>
+                    <span class="inline-flex items-center text-gold-primary text-sm font-medium">
+                        See Solution
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <!-- Coach Card -->
+                <a href="who-we-help.html#coaches" class="group relative p-8 rounded-2xl bg-bg-elevated border border-border-subtle hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1 reveal-up" style="animation-delay: 0.2s;">
+                    <div class="w-12 h-12 rounded-xl bg-gold-primary/10 flex items-center justify-center mb-6 group-hover:bg-gold-primary/20 transition-colors">
+                        <svg class="w-6 h-6 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-primary group-hover:text-gold-primary transition-colors">Course Creators & Coaches</h3>
+                    <p class="text-secondary text-sm leading-relaxed mb-4">Replace launch chaos with predictable sales systems that convert visitors into buyers.</p>
+                    <span class="inline-flex items-center text-gold-primary text-sm font-medium">
+                        See Solution
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="who-we-help.html" class="btn-secondary">View All 6 Profiles</a>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA - Full Bleed -->
-    <section class="final-cta">
-        <div class="final-cta-bg"></div>
-        <div class="container">
-            <div class="final-cta-content fade-up">
-                <h2>If you're serious about scaling, let's talk.</h2>
-                <a href="contact.html" class="btn btn-primary">Book a Strategy Call</a>
+    <!-- Results/Stats Section -->
+    <section class="py-24 lg:py-32 bg-bg-secondary relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--gold-glow)_0%,_transparent_70%)] opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="reveal-up">
+                    <div class="font-heading font-bold text-5xl md:text-6xl text-gold-primary mb-2 counter" data-target="50">0</div>
+                    <div class="text-secondary">Systems Built</div>
+                </div>
+                <div class="reveal-up" style="animation-delay: 0.1s;">
+                    <div class="font-heading font-bold text-5xl md:text-6xl text-gold-primary mb-2 counter" data-target="3">0</div>
+                    <div class="text-secondary">Avg. Months to ROI</div>
+                </div>
+                <div class="reveal-up" style="animation-delay: 0.2s;">
+                    <div class="font-heading font-bold text-5xl md:text-6xl text-gold-primary mb-2 counter" data-target="94">0</div>
+                    <div class="text-secondary">Client Retention %</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 bg-bg-primary">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 reveal-up">
+                Ready for a <span class="text-gold-primary">System</span> That Works?
+            </h2>
+            <p class="text-secondary text-lg mb-10 max-w-2xl mx-auto reveal-up">
+                Stop experimenting. Start scaling. Let's build the growth infrastructure your business actually needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-up">
+                <a href="contact.html" class="btn-primary text-lg px-10 py-5">
+                    Start Your System
+                </a>
+                <a href="https://t.me/YOURUSERNAME" target="_blank" class="btn-telegram text-lg px-10 py-5">
+                    <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    Chat on Telegram
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">Growth<span>.</span></a>
-                    <p>We build the systems behind sustainable growth. No hype. Just results.</p>
+    <footer class="bg-bg-elevated border-t border-border-subtle pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-primary to-gold-subtle flex items-center justify-center">
+                            <span class="text-bg-primary font-bold text-lg">G</span>
+                        </div>
+                        <span class="font-heading font-bold text-xl">Growth & Savvy</span>
+                    </a>
+                    <p class="text-secondary text-sm leading-relaxed">
+                        Building growth systems that turn attention into revenue. No guesswork. Just results.
+                    </p>
                 </div>
-                <div class="footer-column">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="who-we-help.html">Who We Help</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
+                <div>
+                    <h4 class="font-heading font-semibold text-primary mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-secondary hover:text-gold-primary transition-colors">About</a></li>
+                        <li><a href="who-we-help.html" class="text-secondary hover:text-gold-primary transition-colors">Who We Help</a></li>
+                        <li><a href="solutions.html" class="text-secondary hover:text-gold-primary transition-colors">Solutions</a></li>
+                        <li><a href="case-studies.html" class="text-secondary hover:text-gold-primary transition-colors">Case Studies</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
+                <div>
+                    <h4 class="font-heading font-semibold text-primary mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://wa.me/YOURNUMBER" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">WhatsApp</a></li>
+                        <li><a href="https://t.me/YOURUSERNAME" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">Telegram</a></li>
+                        <li><a href="https://fiverr.com/YOURPROFILE" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">Fiverr</a></li>
+                        <li><a href="https://upwork.com/YOURPROFILE" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">Upwork</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                <div>
+                    <h4 class="font-heading font-semibold text-primary mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-secondary">
+                        <li>hello@growthandsavvy.com</li>
+                        <li>Available Worldwide</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Growth Systems. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#">𝕏</a>
-                    <a href="#">in</a>
-                    <a href="#">IG</a>
+            <div class="border-t border-border-subtle pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-muted text-sm">© 2026 Growth & Savvy. All rights reserved.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="text-muted hover:text-primary transition-colors">Privacy</a>
+                    <a href="#" class="text-muted hover:text-primary transition-colors">Terms</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Header scroll effect
-        const header = document.getElementById('header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-up').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Parallax effect for hero glows
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.hero-glow-1, .hero-glow-2');
-            parallaxElements.forEach((el, index) => {
-                const speed = 0.3 + (index * 0.1);
-                el.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
