@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Help | Growth & Savvy</title>
+    <meta name="description" content="Specific growth systems for creators, authors, coaches, e-commerce brands, and more.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-primary text-primary antialiased">
+
+    <!-- Navigation (Same as index) -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-primary to-gold-subtle flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                        <span class="text-bg-primary font-bold text-lg">G</span>
+                    </div>
+                    <span class="font-heading font-bold text-xl tracking-tight">Growth & Savvy</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="about.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="who-we-help.html" class="nav-link text-sm font-medium text-gold-primary transition-colors">Who We Help</a>
+                    <a href="solutions.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">Solutions</a>
+                    <a href="case-studies.html" class="nav-link text-sm font-medium text-secondary hover:text-primary transition-colors">Case Studies</a>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="contact.html" class="btn-primary">Get a System</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 bg-bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <span class="text-gold-primary text-sm font-medium uppercase tracking-widest mb-4 block reveal-up">Specialized Solutions</span>
+            <h1 class="font-heading font-bold text-5xl md:text-6xl lg:text-7xl mb-6 reveal-up">
+                Who We <span class="text-gold-primary">Help</span>
+            </h1>
+            <p class="text-secondary text-lg md:text-xl max-w-3xl mx-auto reveal-up">
+                We don't serve everyone. We solve specific growth problems for specific business types. 
+                Find your situation below.
+            </p>
+        </div>
+    </section>
+
+    <!-- Creators Section -->
+    <section id="creators" class="py-24 bg-bg-secondary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-primary/10 border border-gold-primary/20 mb-6">
+                        <span class="text-gold-primary text-xs font-medium uppercase tracking-wider">01</span>
+                    </div>
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">Creators & Influencers</h2>
+                    
+                    <div class="bg-bg-elevated border border-border-subtle rounded-xl p-6 mb-8">
+                        <h3 class="text-gold-primary font-semibold mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            The Problem
+                        </h3>
+                        <p class="text-secondary">You post consistently but growth and income are unpredictable. Content feels random. Monetization is an afterthought.</p>
+                    </div>
+
+                    <h3 class="font-heading font-semibold text-xl mb-4 text-primary">Our System Solution:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-primary block">Content Structure</strong>
+                                <span class="text-secondary text-sm">Every post has a purpose in the larger growth strategy</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-primary block">Funnel Integration</strong>
+                                <span class="text-secondary text-sm">Turn content into lead capture and offer presentations</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-primary block">Monetization Paths</strong>
+                                <span class="text-secondary text-sm">Digital products, partnerships, and offers built into the flow</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <div>
+                                <strong class="text-primary block">Distribution Systems</strong>
+                                <span class="text-secondary text-sm">Consistent growth without daily guesswork or burnout</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gold-primary/10 border border-gold-primary/30 rounded-xl p-6">
+                        <p class="text-primary font-medium mb-1">👉 Result:</p>
+                        <p class="text-secondary">Content stops being random and starts producing consistent income</p>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="aspect-[4/5] rounded-2xl bg-bg-elevated border border-border-subtle overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                        <!-- Placeholder for creator-focused abstract visual -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gold-primary/20 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                </div>
+                                <p class="text-muted text-sm">Creator System Architecture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authors Section -->
+    <section id="authors" class="py-24 bg-bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal-left">
+                    <div class="aspect-[4/5] rounded-2xl bg-bg-elevated border border-border-subtle overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gold-primary/20 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                </div>
+                                <p class="text-muted text-sm">Authority Building Framework</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-primary/10 border border-gold-primary/20 mb-6">
+                        <span class="text-gold-primary text-xs font-medium uppercase tracking-wider">02</span>
+                    </div>
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">Authors & Thought Leaders</h2>
+                    
+                    <div class="bg-bg-elevated border border-border-subtle rounded-xl p-6 mb-8">
+                        <h3 class="text-gold-primary font-semibold mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            The Problem
+                        </h3>
+                        <p class="text-secondary">You have valuable ideas but low visibility and weak monetization. Your expertise isn't translating into audience or income.</p>
+                    </div>
+
+                    <h3 class="font-heading font-semibold text-xl mb-4 text-primary">Our System Solution:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-primary block">Idea-to-Content Pipeline</strong>
+                                <span class="text-secondary text-sm">Turn concepts into multi-platform content efficiently</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-primary block">Authority Positioning</strong>
+                                <span class="text-secondary text-sm">Build recognition as the go-to expert in your space</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-primary block">Book/Speaking Funnels</strong>
+                                <span class="text-secondary text-sm">Create demand for your core offers and events</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <div>
+                                <strong class="text-primary block">Owned Audience Growth</strong>
+                                <span class="text-secondary text-sm">Build email lists and channels you control</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gold-primary/10 border border-gold-primary/30 rounded-xl p-6">
+                        <p class="text-primary font-medium mb-1">👉 Result:</p>
+                        <p class="text-secondary">Your work becomes visible, trusted, and profitable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches Section -->
+    <section id="coaches" class="py-24 bg-bg-secondary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-primary/10 border border-gold-primary/20 mb-6">
+                        <span class="text-gold-primary text-xs font-medium uppercase tracking-wider">03</span>
+                    </div>
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">Course Creators & Coaches</h2>
+                    
+                    <div class="bg-bg-elevated border border-border-subtle rounded-xl p-6 mb-8">
+                        <h3 class="text-gold-primary font-semibold mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            The Problem
+                        </h3>
+                        <p class="text-secondary">You have knowledge but struggle to sell consistently. Launches are stressful and revenue is unpredictable.</p>
+                    </div>
+
+                    <h3 class="font-heading font-semibold text-xl mb-4 text-primary">Our System Solution:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-primary block">Offer Refinement</strong>
+                                <span class="text-secondary text-sm">Position your course for maximum perceived value</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-primary block">Conversion Funnels</strong>
+                                <span class="text-secondary text-sm">Simple systems that turn visitors into buyers 24/7</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-primary block">Demand Generation</strong>
+                                <span class="text-secondary text-sm">Content that creates desire for your course</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <div>
+                                <strong class="text-primary block">Automated Follow-up</strong>
+                                <span class="text-secondary text-sm">Email flows that nurture and convert on autopilot</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gold-primary/10 border border-gold-primary/30 rounded-xl p-6">
+                        <p class="text-primary font-medium mb-1">👉 Result:</p>
+                        <p class="text-secondary">Predictable sales instead of random launches</p>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="aspect-[4/5] rounded-2xl bg-bg-elevated border border-border-subtle overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gold-primary/20 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                </div>
+                                <p class="text-muted text-sm">Coach Conversion System</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-commerce Section -->
+    <section id="ecommerce" class="py-24 bg-bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal-left">
+                    <div class="aspect-[4/5] rounded-2xl bg-bg-elevated border border-border-subtle overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gold-primary/20 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                                </div>
+                                <p class="text-muted text-sm">E-commerce Optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-primary/10 border border-gold-primary/20 mb-6">
+                        <span class="text-gold-primary text-xs font-medium uppercase tracking-wider">04</span>
+                    </div>
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">E-commerce Brands</h2>
+                    
+                    <div class="bg-bg-elevated border border-border-subtle rounded-xl p-6 mb-8">
+                        <h3 class="text-gold-primary font-semibold mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            The Problem
+                        </h3>
+                        <p class="text-secondary">Traffic comes in but conversion and systems are weak. You're leaving money on the table with every visitor.</p>
+                    </div>
+
+                    <h3 class="font-heading font-semibold text-xl mb-4 text-primary">Our System Solution:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-primary block">Conversion Optimization</strong>
+                                <span class="text-secondary text-sm">Product pages and flows that turn browsers into buyers</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-primary block">Ad-Content Alignment</strong>
+                                <span class="text-secondary text-sm">Ensure traffic quality matches your offer</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-primary block">Retention Systems</strong>
+                                <span class="text-secondary text-sm">Email/SMS flows for repeat purchases</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <div>
+                                <strong class="text-primary block">Performance Tracking</strong>
+                                <span class="text-secondary text-sm">Clear metrics to optimize and scale</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gold-primary/10 border border-gold-primary/30 rounded-xl p-6">
+                        <p class="text-primary font-medium mb-1">👉 Result:</p>
+                        <p class="text-secondary">More revenue from the same traffic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-24 bg-bg-secondary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-primary/10 border border-gold-primary/20 mb-6">
+                        <span class="text-gold-primary text-xs font-medium uppercase tracking-wider">05</span>
+                    </div>
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">Community & Mission-Driven Brands</h2>
+                    
+                    <div class="bg-bg-elevated border border-border-subtle rounded-xl p-6 mb-8">
+                        <h3 class="text-gold-primary font-semibold mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            The Problem
+                        </h3>
+                        <p class="text-secondary">You struggle with consistency and reach. Your message is important but isn't spreading effectively.</p>
+                    </div>
+
+                    <h3 class="font-heading font-semibold text-xl mb-4 text-primary">Our System Solution:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-primary block">Content Systems</strong>
+                                <span class="text-secondary text-sm">Consistent posting without losing your authentic voice</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-primary block">Audience Communication</strong>
+                                <span class="text-secondary text-sm">Better engagement with your community</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-primary block">Campaign Structure</strong>
+                                <span class="text-secondary text-sm">Organized outreach that amplifies your mission</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <div>
+                                <strong class="text-primary block">Operational Simplification</strong>
+                                <span class="text-secondary text-sm">Streamlined coordination so you focus on impact</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gold-primary/10 border border-gold-primary/30 rounded-xl p-6">
+                        <p class="text-primary font-medium mb-1">👉 Result:</p>
+                        <p class="text-secondary">Stronger presence and steady growth without diluting your message</p>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="aspect-[4/5] rounded-2xl bg-bg-elevated border border-border-subtle overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gold-primary/20 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                </div>
+                                <p class="text-muted text-sm">Mission Amplification</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Buyers Section -->
+    <section id="leads" class="py-24 bg-bg-primary">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal-left">
+                    <div class="aspect-[4/5] rounded-2xl bg-bg-elevated border border-border-subtle overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gold-primary/20 flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                </div>
+                                <p class="text-muted text-sm">Lead Quality System</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-primary/10 border border-gold-primary/20 mb-6">
+                        <span class="text-gold-primary text-xs font-medium uppercase tracking-wider">06</span>
+                    </div>
+                    <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">Lead Buyers & Affiliate Marketers</h2>
+                    
+                    <div class="bg-bg-elevated border border-border-subtle rounded-xl p-6 mb-8">
+                        <h3 class="text-gold-primary font-semibold mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            The Problem
+                        </h3>
+                        <p class="text-secondary">You get leads but quality and conversion are unstable. You're spending money on traffic that doesn't convert.</p>
+                    </div>
+
+                    <h3 class="font-heading font-semibold text-xl mb-4 text-primary">Our System Solution:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong class="text-primary block">Quality Targeting</strong>
+                                <span class="text-secondary text-sm">Better filtering to attract high-intent prospects</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong class="text-primary block">High-Converting Pages</strong>
+                                <span class="text-secondary text-sm">Landing pages and funnels optimized for your offer</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong class="text-primary block">Tracking Infrastructure</strong>
+                                <span class="text-secondary text-sm">Clear metrics to measure and optimize performance</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-gold-primary/20 text-gold-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <div>
+                                <strong class="text-primary block">Follow-up Optimization</strong>
+                                <span class="text-secondary text-sm">Systems to maximize conversion from every lead</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gold-primary/10 border border-gold-primary/30 rounded-xl p-6">
+                        <p class="text-primary font-medium mb-1">👉 Result:</p>
+                        <p class="text-secondary">Better leads, higher conversion, more profit from every dollar spent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-bg-secondary">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6 reveal-up">See Yourself Here?</h2>
+            <p class="text-secondary text-lg mb-10 reveal-up">Let's build the system your business needs to scale predictably.</p>
+            <a href="contact.html" class="btn-primary text-lg px-10 py-5 reveal-up">Start Your System</a>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-bg-elevated border-t border-border-subtle pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-primary to-gold-subtle flex items-center justify-center">
+                            <span class="text-bg-primary font-bold text-lg">G</span>
+                        </div>
+                        <span class="font-heading font-bold text-xl">Growth & Savvy</span>
+                    </a>
+                    <p class="text-secondary text-sm leading-relaxed">
+                        Building growth systems that turn attention into revenue. No guesswork. Just results.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-primary mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-secondary hover:text-gold-primary transition-colors">About</a></li>
+                        <li><a href="who-we-help.html" class="text-secondary hover:text-gold-primary transition-colors">Who We Help</a></li>
+                        <li><a href="solutions.html" class="text-secondary hover:text-gold-primary transition-colors">Solutions</a></li>
+                        <li><a href="case-studies.html" class="text-secondary hover:text-gold-primary transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-primary mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://wa.me/YOURNUMBER" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">WhatsApp</a></li>
+                        <li><a href="https://t.me/YOURUSERNAME" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">Telegram</a></li>
+                        <li><a href="https://fiverr.com/YOURPROFILE" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">Fiverr</a></li>
+                        <li><a href="https://upwork.com/YOURPROFILE" target="_blank" class="text-secondary hover:text-gold-primary transition-colors">Upwork</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-primary mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-secondary">
+                        <li>hello@growthandsavvy.com</li>
+                        <li>Available Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border-subtle pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-muted text-sm">© 2026 Growth & Savvy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
